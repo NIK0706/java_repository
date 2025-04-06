@@ -1,4 +1,4 @@
-package it.nicolas_marciello._4itti.esercizi.aprile_2025.apr7;
+package it.nicolas_marciello._4itti.esercizi.aprile_2025.consegna_in_classe;
 
 public class Obj {
 	protected String name;

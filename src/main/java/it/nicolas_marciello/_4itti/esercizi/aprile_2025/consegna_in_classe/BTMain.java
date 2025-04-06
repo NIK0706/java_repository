@@ -1,4 +1,4 @@
-package it.nicolas_marciello._4itti.esercizi.aprile_2025.apr7;
+package it.nicolas_marciello._4itti.esercizi.aprile_2025.consegna_in_classe;
 
 public class BTMain{
 	public static void main(String[] args) {
@@ -21,6 +21,5 @@ public class BTMain{
 		tree1.visitaAnticipata(tree1.root);
 
 		System.out.println(tree1.findNode(tree1.root, obj9));
-		System.out.println("Ciao sussy");
 	}
 }
