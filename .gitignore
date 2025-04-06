@@ -1,0 +1,25 @@
+# Ignora la cartella di build di Maven
+target/
+
+# Ignora i file compilati (.class)
+*.class
+
+# Ignora cartelle di configurazione IDE
+.idea/
+.vscode/
+*.iml
+.settings/
+
+# Ignora file generati su macOS
+.DS_Store
+
+# Ignora i file di log
+*.log
+
+# Ignora variabili e configurazioni sensibili
+*.env
+*.properties
+
+# Ignora la cartella di configurazione di Maven e Maven Wrapper
+.mvn/
+.mvn/wrapper/
