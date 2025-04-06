@@ -1,0 +1,89 @@
+powRecursivo = fn per semplicità.
+
+Es_1:
+	Sapendo che base = 2 e potenza = 4;
+
+	fn(4) esegue. -Inizio
+	fn(4) chiama fn(4-1). Quindi fn(3)
+	fn(3) esegue.
+	fn(3) chiama fn(3-1). Quindi fn(2)
+	fn(2) esegue.
+	fn(2) chiama fn(2-1). Quindi fn(1)
+	fn(1) esegue.
+	fn(1) ritorna base. Quindi 2 -FineParte (Inizio ComeBack)
+	fn(2) continua esecuzione.
+	fn(2) ritorna base * fn(1) a fn(3). Quindi 2 * 2
+	fn(3) continua esecuzione.
+	fn(3) ritorna base * fn(2) a fn(4). Quindi 2 * 4
+	fn(4) continua esecuzione.
+	fn(4) ritorna base * fn(3). Quindi 2 * 8
+	fn(4) finisce l'esecuzione ritornando 18 -Fine
+
+Es_2:
+	Sapendo che base = 5 e potenza = 2;
+
+	fn(2) esegue. -Inizio
+	fn(2) chiama fn(2-1). Quindi fn(1)
+	fn(1) esegue.
+	fn(1) ritorna base. Quindi 5 -FineParte (Inizio ComeBack)
+	fn(2) continua esecuzione.
+	fn(2) ritorna base * fn(1). Quindi 5 * 5 --> fn(2) => 25
+	fn(2) finisce l'esecuzione ritornando 25 -Fine
+
+Es_3:
+	Sapendo che base = 2 e potenza = 8;
+
+	fn(8) esegue. -Inizio
+	fn(8) chiama fn(8-1). Quindi fn(7)
+	fn(7) esegue.
+	fn(7) chiama fn(7-1). Quindi fn(6)
+	fn(6) esegue.
+	fn(6) chiama fn(6-1). Quindi fn(5)
+	fn(5) esegue.
+	fn(5) chiama fn(5-1). Quindi fn(4)
+	fn(4) esegue.
+	fn(4) chiama fn(4-1). Quindi fn(3)
+	fn(3) esegue.
+	fn(3) chiama fn(3-1). Quindi fn(2)
+	fn(2) esegue.
+	fn(2) chiama fn(2-1). Quindi fn(1)
+	fn(1) esegue.
+	fn(1) ritorna base. Quindi 2 -FineParte (Inizio ComeBack)
+	fn(2) continua esecuzione.
+	fn(2) ritorna base * fn(1) a fn(3). Quindi 2 * 2 --> fn(2) => 4
+	fn(3) continua esecuzione.
+	fn(3) ritorna base * fn(2) a fn(4). Quindi 2 * 4 --> fn(3) => 8
+	fn(4) continua esecuzione.
+	fn(4) ritorna base * fn(3) a fn(5). Quindi 2 * 8 --> fn(3) => 16
+	fn(5) continua esecuzione.
+	fn(5) ritorna base * fn(4) a fn(6). Quindi 2 * 16 --> fn(3) => 32
+	fn(6) continua esecuzione.
+	fn(6) ritorna base * fn(5) a fn(7). Quindi 2 * 32 --> fn(3) => 64
+	fn(7) continua esecuzione.
+	fn(7) ritorna base * fn(6) a fn(8). Quindi 2 * 64 --> fn(3) => 128
+	fn(8) continua esecuzione.
+	fn(8) ritorna base * fn(7). Quindi 2 * 128 --> fn(3) => 256
+	fn(8) finisce l'esecuzione ritornando 256 -Fine
+
+Es_4:
+	Sapendo che base = 7 e potenza = 5;
+
+	fn(5) esegue. -Inizio
+	fn(5) chiama fn(4).
+	fn(4) esegue.
+	fn(4) chiama fn(3)
+	fn(3) esegue.
+	fn(3) chiama fn(2)
+	fn(2) esegue.
+	fn(2) chiama fn(1)
+	fn(1) esegue.
+	fn(1) ritorna 7. -FineParte (Inizio ComeBack)
+	fn(2) continua esecuzione.
+	fn(2) ritorna 7 * fn(1) a fn(3). --> 7*7 = 49
+	fn(3) continua esecuzione.
+	fn(3) ritorna 7 * fn(2) a fn(4). --> 7*49 = 343
+	fn(4) continua esecuzione.
+	fn(4) ritorna 7 * fn(3) a fn(5). --> 7*343 = 2401
+	fn(5) continua esecuzione.
+	fn(5) ritorna 7 * fn(4). --> 7*2401 = 16807
+	fn(5) finisce l'esecuzione ritornando 16807 -Fine
