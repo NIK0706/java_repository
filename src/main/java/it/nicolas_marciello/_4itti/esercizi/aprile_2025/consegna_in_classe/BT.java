@@ -48,6 +48,13 @@ public class BT{
 		}
 	}
 
+	// Oppure uso questo metodo dove permette di aggiungere più nodi in un colpo solo, passandogli un'array di oggetti Obj.
+	public void addNode(Obj... dataArr){
+		for(Obj data : dataArr){
+			addNode(data);
+		}
+	}
+
  	public void visitaSimmetrica(BTNode root){
 		if(root == null){
 			return;
@@ -79,6 +86,11 @@ public class BT{
 		}
 	}
 
+	// Senza dover specificare la root.
+	public void visitaAnticipata(){
+		visitaAnticipata(root);
+	}
+
 	public boolean findNode(BTNode root, Obj data){
 		// Se l'albero non esistesse, allora ritorna false.
 		if(root == null){
@@ -99,5 +111,9 @@ public class BT{
 			return findNode(root.getPdx(), data);
 		}
 		return false;
+	}
+
+	public boolean isEmpty(){
+		return root == null;
 	}
 }

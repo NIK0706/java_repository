@@ -13,13 +13,21 @@ public class BTMain{
 		tree1.addNode(obj2);
 		tree1.addNode(obj9);
 		tree1.addNode(obj8);
+		// tree1.addNode(obj4, obj1, obj3, obj2, obj9, obj8); // --> Passando dal metodo che accetta ppiù variabili (varargs).
 
-		System.out.println("---");
-
+		System.out.println("---\nVisista simmetrica:");
 		tree1.visitaSimmetrica();
-		System.out.println("---");
-		tree1.visitaAnticipata(tree1.root);
 
-		System.out.println(tree1.findNode(tree1.root, obj9));
+		System.out.println("---\nVisista anticipata:");
+		tree1.visitaAnticipata();
+
+		// Controllo della presenza dell'oggetto obj2 nell'albero.
+		System.out.println("\nIl valore:");
+		obj2.printObj();
+
+		// Uso dell'operatore ternario per semplificare la lettura (cond ? true-case : false-case).
+		System.out.println(tree1.findNode(tree1.root, obj2) ? "è presente nell'albero." : "non è presente nell'albero.");
+
+		System.out.println(tree1.isEmpty() ? "L'albero è vuoto." : "L'albero non è vuoto.");
 	}
 }
