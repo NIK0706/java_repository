@@ -1,4 +1,4 @@
-package it.nicolas_marciello.AS25_26.ClientServerSockets.server.multipleRecipients;
+package it.nicolas_marciello._5itti.ClientServerSockets.server.multipleRecipients;
 
 import java.io.BufferedReader;
 import java.io.IOException;
@@ -15,13 +15,21 @@ public class echoServer implements Runnable {
 
 	@Override
 	public void run(){
+		// Avvia un thread per gestire la comunicazione con il client
 		System.out.println("Thread created for client: " + ((clientSocket.getInetAddress()).toString()).replace("/", ""));
 		try {
-			out = new PrintWriter(clientSocket.getOutputStream(), true);
-			in = new BufferedReader(new InputStreamReader(clientSocket.getInputStream()));
+			out = new PrintWriter(clientSocket.getOutputStream(), true); // Output stream verso il client
+			in = new BufferedReader(new InputStreamReader(clientSocket.getInputStream())); // Input stream dal client
 
-			sendMsg("Ciao dal server!");
-			System.out.println("(C: " + ((clientSocket.getInetAddress()).toString()).replace("/", "") + ") > " + receiveMsg());
+			// Ciclo di comunicazione con il client (fino a quando non riceve "ESC")
+			String clientInString;
+			while((clientInString = receiveMsg()) != null){
+				if("ESC".equals(clientInString)){
+					break;
+				}
+				sendMsg("Ciao dal server!");
+				System.out.println("(C: " + ((clientSocket.getInetAddress()).toString()).replace("/", "") + ") > " + clientInString);
+			}
 		} catch (IOException ignored) {}
 	}
 
@@ -33,12 +41,18 @@ public class echoServer implements Runnable {
 	}
 
 	public void sendMsg(String msg){
-		out.println(msg);
+		if(out != null){
+			out.println(msg);
+		}
 	}
 
 	public String receiveMsg() throws IOException {
-		String response = in.readLine();
-		return response;
+		if(in == null){
+			return null;
+		}else{
+			String response = in.readLine();
+			return response;
+		}
 	}
 
 	public static void main(String[] args) throws IOException {

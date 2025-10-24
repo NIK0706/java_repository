@@ -1,4 +1,4 @@
-package it.nicolas_marciello.AS25_26.ClientServerSockets.client;
+package it.nicolas_marciello._5itti.ClientServerSockets.client;
 
 import java.io.BufferedReader;
 import java.io.IOException;
